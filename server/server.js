@@ -15,10 +15,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.use( require('./routes/usuario'))  
+app.use( require('./routes/usuario'));  
 
  
-mongoose.connect('mongodb://localhost:27017/dtex', (err, res)=>{
+mongoose.connect(process.env.URLDB, (err, res)=>{
 
 	if( err ) throw err;
 
